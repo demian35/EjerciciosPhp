@@ -5,8 +5,8 @@ if($_POST){
     $valorA=$_POST['valorA'];
     $valorB=$_POST['valorB'];
 
-    //usando el operador logico and && con comparaciones de datos
-    if(($valorA != $valorB) && ($valorA > $valorB)){
+    //usando el operador logico or || con comparaciones de datos
+    if(($valorA != $valorB) || ($valorA > $valorB)){
         echo "A es diferente a B y ademas A es mayor a B";
     }
 }

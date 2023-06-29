@@ -2,10 +2,11 @@
 
     if($_POST){
 
-        $valorA=$_POST['valorA'];
-        $valorB=$_POST['valorB'];
-        $operacion=$_POST['operacion'];
+        $valorA=$_POST['valorA'];//valor A
+        $valorB=$_POST['valorB'];//valor b
+        $operacion=$_POST['operacion'];//recibe la operacion que desea realizar el usuario
 
+        //switch para elegir entre los distintos tipos de operaciones disponibles 
         switch($operacion){
 
             case 'suma':
@@ -27,6 +28,7 @@
             break;
         }
 
+        //immprimimos el resultado
         echo "<br> Resutado ".$resultado; 
     }
 ?>

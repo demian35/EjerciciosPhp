@@ -1,5 +1,5 @@
 <?php
-
+//mantenemos los datos de la sesion activos cuando entramos a otra pagina
 session_start();
 
 

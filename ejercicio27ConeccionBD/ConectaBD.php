@@ -4,7 +4,7 @@
 $servidor="localhost";
 $basedatos="album";
 $usuario="root";
-$password="root";
+$password="";
 
 try{
     //conexion del tipo pdo para manipular y conectarnos a una base de datos

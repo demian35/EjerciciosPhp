@@ -6,12 +6,21 @@ $nombreTxt="";
 //inicializamos la variable para recibir la opcion radio seleccionada en el form
 $rdsEquipo="";
 
+//inicializamos las variables de los checkboxes a leer
+$chkphp="";
+$chkhtml="";
+$chkcss="";
+
 //si hay post del formulario
 if($_POST){
     //if ternario si nombreTxt recibe informacion del post la guardamos
     $nombreTxt=(isset($_POST["nombreTxt"]))?$_POST["nombreTxt"]:"";
     //if ternario para guardar la opcion que seleccione el usuario
     $rdsEquipo=(isset($_POST["equipo"]))?$_POST["equipo"]:"";
+    //if para guardar los checkboxes seleccionados
+    $chkphp=(isset($_POST["chkbxphp"])=="si")?"checked":"";
+    $chkhtml=(isset($_POST["chkbxhtml"])=="si")?"checked":"";
+    $chkcss=(isset($_POST["chkbxcss"])=="si")?"checked":"";
 }
 ?>
 
@@ -25,7 +34,7 @@ if($_POST){
 <body>
     <?php if(isset($_POST["nombreTxt"])){?>
     <strong><?php echo "Hola :"?></strong>: <?php echo $nombreTxt;?>
-    <strong><?php echo "Le voy al:"?></strong> <?php echo $rdsEquipo;?>
+    <strong><?php echo "Le vas al:"?></strong> <?php echo $rdsEquipo;?>
     <?php } ?>
 
     <form action="recepciondatosformulario.php" method="post">
@@ -38,6 +47,15 @@ if($_POST){
         Cruz azul: <input type="radio"<?php ($rdsEquipo=="Cruz azul")?"checked":"";?> name="equipo" value="Cruz azul">
         <br>
         America: <input type="radio" <?php ($rdsEquipo=="America")?"checked":"";?> name="equipo" value="America">
+        <br>
+
+        Estas aprendiendo?
+        <br>
+        PhP <input type="checkbox" <?php echo $chkphp ?> name="chkbxphp" value="si">
+        <br>
+        Html <input type="checkbox" <?php echo $chkhtml ?> name="chkbxhtml" value="si">
+        <br>
+        css <input type="checkbox" <?php echo $chkcss ?> name="chkbxcss" value="si">
         <br>
 
         <input type="submit" value="Aceptar">

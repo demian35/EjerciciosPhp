@@ -30,6 +30,7 @@ $apitraducida=json_decode($respuesta);
         
         h1 {
             text-align: center;
+            font-weight: bold;
         }
         
         ul {
@@ -37,25 +38,31 @@ $apitraducida=json_decode($respuesta);
             padding-left: 0;
         }
         
-        li {
+        .descripcion {
             margin-bottom: 10px;
         }
         
-        p {
+        h2 {
             font-weight: bold;
+        }
+
+        .nombrebebida{
+            color: blue;
+            font-weight: bold;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <p>Margaritas</p>
+    <h1>Margaritas</h1>
     <ul>
         <?php foreach($apitraducida->drinks as $bebidas){ //imprimimos los datos en orden de lista ?>
         
-        <li><?php echo $bebidas->strDrink ?>|<?php echo $bebidas->strAlcoholic ?></li>|
+        <li class="nombrebebida"><?php echo $bebidas->strDrink ?>|<?php echo $bebidas->strAlcoholic ?></li>
 
         <ul>
-            <li><?php echo $bebidas->strInstructions ?></li>
-            <p>Ingredientes</p>
+            <li class="descrpcion"><?php echo $bebidas->strInstructions ?></li>
+            <h2>Ingredientes</h2>
             <li><?php echo $bebidas->strIngredient1 ?></li>
             <li><?php echo $bebidas->strIngredient2 ?></li>
             <li><?php echo $bebidas->strIngredient3 ?></li>

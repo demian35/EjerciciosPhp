@@ -23,6 +23,28 @@ $apitraducida=json_decode($respuesta);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        p {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <p>Margaritas</p>

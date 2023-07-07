@@ -42,6 +42,10 @@ if($_POST){
     <?php if(isset($_POST["nombreTxt"])){?>
     <strong><?php echo "Hola :"?></strong>: <?php echo $nombreTxt;?>
     <strong><?php echo "Le vas al:"?></strong> <?php echo $rdsEquipo;?>
+    <strong>Estas aprendiendo</strong> 
+        -<?php ($_POST["chkbxphp"]=="checked")?"php":""; ?>
+        -<?php ($_POST["chkbxhtml"]=="checked")?"HTML":""; ?>
+        -<?php ($_POST["chkbxcss"]=="checked")?"CSS":""; ?>
     <?php } ?>
 
     <form action="recepciondatosformulario.php" method="post">

@@ -11,6 +11,9 @@ $chkphp="";
 $chkhtml="";
 $chkcss="";
 
+//inicializamos la variable para el select
+$selectDep="";
+
 //si hay post del formulario
 if($_POST){
     //if ternario si nombreTxt recibe informacion del post la guardamos
@@ -21,6 +24,10 @@ if($_POST){
     $chkphp=(isset($_POST["chkbxphp"])=="si")?"checked":"";
     $chkhtml=(isset($_POST["chkbxhtml"])=="si")?"checked":"";
     $chkcss=(isset($_POST["chkbxcss"])=="si")?"checked":"";
+
+    //if para comprobar guardar lo que se reciba del select
+    $selectDep=(isset($_POST["lstSports"]))?$_POST["lstSports"]:"";
+    print_r($selectDep);
 }
 ?>
 
@@ -57,6 +64,14 @@ if($_POST){
         <br>
         css <input type="checkbox" <?php echo $chkcss ?> name="chkbxcss" value="si">
         <br>
+
+        Que deporte te gusta?
+        <select name="lstSports">
+            <option value="">[No me gustan los deportes] </option>
+            <option value="futbol">Futbol</option>
+            <option value="basket">Baloncesto</option>
+            <option value="Baseball">Besibol</option>
+        </select>
 
         <input type="submit" value="Aceptar">
     </form>

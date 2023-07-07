@@ -14,6 +14,9 @@ $chkcss="";
 //inicializamos la variable para el select
 $selectDep="";
 
+//inicializamos variable para guardar el texto de un textarea
+$texto="";
+
 //si hay post del formulario
 if($_POST){
     //if ternario si nombreTxt recibe informacion del post la guardamos
@@ -27,6 +30,7 @@ if($_POST){
 
     //if para comprobar guardar lo que se reciba del select
     $selectDep=(isset($_POST["lstSports"]))?$_POST["lstSports"]:"";
+    $texto=(isset($_POST["txtarea"]))?$_POST["txtarea"]:"";
     
 }
 ?>
@@ -47,7 +51,8 @@ if($_POST){
         -<?php echo ($chkhtml=="checked")?"HTML":""; ?> <br>
         -<?php echo ($chkcss=="checked")?"CSS":""; ?> <br>
     <br>
-    <strong>Te gusta el:</strong> <?php echo $selectDep ?>
+    <strong>Te gusta el:</strong> <?php echo $selectDep ?><br>
+    <strong>Tu duda es:</strong> <?php echo $texto; ?>
     <?php } ?>
 
     <form action="recepciondatosformulario.php" method="post">
@@ -78,6 +83,11 @@ if($_POST){
             <option value="basket" <?php echo ($rdsEquipo=="basket")?"selected":"";?>>Baloncesto</option>
             <option value="Baseball" <?php echo ($rdsEquipo=="Baseball")?"selected":"";?>>Besibol</option>
         </select>
+        <br>
+        Alguna duda:<br>
+        <textarea name="txtarea" rows="10" cols="30">
+            <?php echo $texto; ?>
+        </textarea>
 
         <input type="submit" value="Aceptar">
     </form>

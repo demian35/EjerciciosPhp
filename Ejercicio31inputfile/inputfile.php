@@ -7,6 +7,9 @@ if($_POST){
     //inprimimos informacion del archio que estamos subiendo
     print_r($_FILES["subearchivo"]["name"]);
 
+    //funcion para descargar un archivo subido previamente por medio del form html
+    move_uploaded_file($_FILES["subearchivo"]["tmp_name"],$_FILES["subearchivo"]["name"]);
+
 }
 
 ?>

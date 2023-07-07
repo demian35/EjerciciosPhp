@@ -27,7 +27,7 @@ if($_POST){
 
     //if para comprobar guardar lo que se reciba del select
     $selectDep=(isset($_POST["lstSports"]))?$_POST["lstSports"]:"";
-    print_r($selectDep);
+    
 }
 ?>
 
@@ -41,11 +41,13 @@ if($_POST){
 <body>
     <?php if(isset($_POST["nombreTxt"])){?>
     <strong><?php echo "Hola :"?></strong>: <?php echo $nombreTxt;?>
-    <strong><?php echo "Le vas al:"?></strong> <?php echo $rdsEquipo;?>
-    <strong>Estas aprendiendo</strong> 
-        -<?php ($_POST["chkbxphp"]=="checked")?"php":""; ?>
-        -<?php ($_POST["chkbxhtml"]=="checked")?"HTML":""; ?>
-        -<?php ($_POST["chkbxcss"]=="checked")?"CSS":""; ?>
+    <strong><?php echo "Le vas al:"?></strong> <?php echo $rdsEquipo;?><br>
+    <strong>Estas aprendiendo</strong> <br>
+        -<?php echo ($chkphp=="checked")?"php":""; ?> <br>
+        -<?php echo ($chkhtml=="checked")?"HTML":""; ?> <br>
+        -<?php echo ($chkcss=="checked")?"CSS":""; ?> <br>
+    <br>
+    <strong>Te gusta el:</strong> <?php echo $selectDep ?>
     <?php } ?>
 
     <form action="recepciondatosformulario.php" method="post">
@@ -72,9 +74,9 @@ if($_POST){
         Que deporte te gusta?
         <select name="lstSports">
             <option value="">[No me gustan los deportes] </option>
-            <option value="futbol">Futbol</option>
-            <option value="basket">Baloncesto</option>
-            <option value="Baseball">Besibol</option>
+            <option value="futbol" <?php echo ($rdsEquipo=="futbol")?"selected":"";?>>Futbol</option>
+            <option value="basket" <?php echo ($rdsEquipo=="basket")?"selected":"";?>>Baloncesto</option>
+            <option value="Baseball" <?php echo ($rdsEquipo=="Baseball")?"selected":"";?>>Besibol</option>
         </select>
 
         <input type="submit" value="Aceptar">
